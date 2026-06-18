@@ -299,6 +299,13 @@ function submitForm(e) { e.preventDefault(); document.getElementById("formConten
 
 document.addEventListener("DOMContentLoaded", function() {
 const cursor = document.getElementById("cursor");
+
+// Hide cursor on touch devices
+if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+  cursor.style.display = "none";
+  document.body.style.cursor = "auto";
+  return;
+}
 let mx = 0, my = 0;
 
 document.addEventListener("mousemove", e => {
