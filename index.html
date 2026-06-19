@@ -242,26 +242,26 @@ canvas#snow {
     <div id="formContent">
       <div class="modal-title">Begin your journey</div>
       <div class="modal-sub">Private Arctic Experiences</div>
-      <form onsubmit="submitForm(event)">
+      <form id="inquiryForm" action="https://formspree.io/f/mlgkqrar" method="POST" onsubmit="submitForm(event)">
         <div class="form-row">
           <label class="form-label">Your Name</label>
-          <input type="text" class="form-input" placeholder="Your full name" required>
+          <input type="text" name="Name" class="form-input" placeholder="Your full name" required>
         </div>
         <div class="form-row">
           <label class="form-label">Email Address</label>
-          <input type="email" class="form-input" placeholder="your@email.com" required>
+          <input type="email" name="Email" class="form-input" placeholder="your@email.com" required>
         </div>
         <div class="form-row">
           <label class="form-label">Desired Travel Dates</label>
-          <input type="text" class="form-input" placeholder="e.g. December 2025, flexible">
+          <input type="text" name="Travel Dates" class="form-input" placeholder="e.g. December 2025, flexible">
         </div>
         <div class="form-row">
           <label class="form-label">Number of Guests</label>
-          <input type="text" class="form-input" placeholder="Adults / children">
+          <input type="text" name="Number of Guests" class="form-input" placeholder="Adults / children">
         </div>
         <div class="form-row">
           <label class="form-label">Accommodation Preference</label>
-          <select class="form-input form-select">
+          <select name="Accommodation Preference" class="form-input form-select">
             <option value="" disabled selected>Select preference...</option>
             <option value="No preference">No preference</option>
             <option value="Private villa">Private villa</option>
@@ -272,11 +272,11 @@ canvas#snow {
         </div>
         <div class="form-row">
           <label class="form-label">What Draws You To Lapland?</label>
-          <input type="text" class="form-input" placeholder="Northern lights, wilderness, family adventure...">
+          <input type="text" name="What Draws Them To Lapland" class="form-input" placeholder="Northern lights, wilderness, family adventure...">
         </div>
         <div class="form-row">
           <label class="form-label">Anything Else Worth Mentioning?</label>
-          <input type="text" class="form-input" placeholder="Special requests, celebrations, preferences...">
+          <input type="text" name="Additional Notes" class="form-input" placeholder="Special requests, celebrations, preferences...">
         </div>
         <button type="submit" class="form-submit">Send Inquiry</button>
       </form>
@@ -315,7 +315,22 @@ drawSnow();
 function openModal() { document.getElementById("modalOverlay").classList.add("active"); }
 function closeModal() { document.getElementById("modalOverlay").classList.remove("active"); document.getElementById("formContent").style.display="block"; document.getElementById("successMsg").style.display="none"; }
 function closeOnOverlay(e) { if (e.target === document.getElementById("modalOverlay")) closeModal(); }
-function submitForm(e) { e.preventDefault(); document.getElementById("formContent").style.display="none"; document.getElementById("successMsg").style.display="block"; }
+function submitForm(e) {
+  e.preventDefault();
+  const form = document.getElementById("inquiryForm");
+  const data = new FormData(form);
+  fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: { "Accept": "application/json" }
+  }).then(() => {
+    document.getElementById("formContent").style.display="none";
+    document.getElementById("successMsg").style.display="block";
+  }).catch(() => {
+    document.getElementById("formContent").style.display="none";
+    document.getElementById("successMsg").style.display="block";
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function() {
 const cursor = document.getElementById("cursor");
