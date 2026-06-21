@@ -336,9 +336,15 @@ function submitForm(e) {
   }).then(() => {
     document.getElementById("formContent").style.display="none";
     document.getElementById("successMsg").style.display="block";
+    if (typeof gtag === "function") {
+      gtag('event', 'conversion', {'send_to': 'AW-18253017665/CSuNCP32oMMcEMHk2_9D'});
+    }
   }).catch(() => {
     document.getElementById("formContent").style.display="none";
     document.getElementById("successMsg").style.display="block";
+    if (typeof gtag === "function") {
+      gtag('event', 'conversion', {'send_to': 'AW-18253017665/CSuNCP32oMMcEMHk2_9D'});
+    }
   });
 }
 
