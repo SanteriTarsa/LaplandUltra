@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18253017665"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18253017665');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journal · Arctic Travel Notes · Lapland Ultra</title>
+<meta name="description" content="Notes on private Arctic travel in Finnish Lapland — Northern Lights, wilderness journeys, and the details behind a bespoke Lapland Ultra itinerary.">
+<link rel="canonical" href="https://laplandultra.com/journal/">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="192x192" href="../apple-touch-icon.png">
+
+<meta property="og:site_name" content="Lapland Ultra">
+<meta property="og:title" content="The Journal · Lapland Ultra">
+<meta property="og:description" content="Notes on private Arctic travel in Finnish Lapland — Northern Lights, wilderness journeys, and the details behind a bespoke Lapland Ultra itinerary.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://laplandultra.com/journal/">
+<meta property="og:image" content="https://laplandultra.com/journey-northern-lights.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "The Journal",
+  "url": "https://laplandultra.com/journal/",
+  "isPartOf": { "@type": "WebSite", "name": "Lapland Ultra", "url": "https://laplandultra.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://laplandultra.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://laplandultra.com/journal/" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,300&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="journal.css">
+</head>
+<body>
+
+<header class="journal-header reveal">
+  <a class="logo-link" href="../" aria-label="Lapland Ultra home">
+    <img class="logo" src="../logo.svg" alt="Lapland Ultra">
+  </a>
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-diamond"></div>
+    <div class="divider-line"></div>
+  </div>
+  <p class="journal-kicker">The Journal</p>
+</header>
+
+<main class="journal-list">
+  <a class="post-card reveal" href="private-northern-lights-lapland/">
+    <img class="post-card-image" src="../journey-northern-lights.jpg" alt="Northern Lights over Finnish Lapland">
+    <div>
+      <p class="post-card-date">July 2026</p>
+      <h2 class="post-card-title">Private Northern Lights Tours in Lapland: When, Where &amp; How We Plan Them</h2>
+      <p class="post-card-excerpt">What actually makes a Northern Lights evening private — the forecasting, the dark-sky locations across Rovaniemi, Saariselkä, Levi and beyond, and how we build a plan around the sky rather than a fixed itinerary.</p>
+    </div>
+  </a>
+</main>
+
+<footer class="site-footer reveal">
+  <div class="footer-links">
+    <a href="../" class="footer-link">Home</a>
+    <span class="footer-dot">&middot;</span>
+    <a href="../privacy.html" class="footer-link">Privacy Policy</a>
+  </div>
+  <div class="footer-copy">Finnish Lapland &nbsp;&middot;&nbsp; Private Experiences</div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeOnOverlay(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&#215;</button>
+    <div id="formContent">
+      <div class="modal-title">Begin your journey</div>
+      <div class="modal-sub">Private Arctic Experiences</div>
+      <form id="inquiryForm" action="https://formspree.io/f/mlgkqrar" method="POST" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <label class="form-label">Your Name</label>
+          <input type="text" name="Name" class="form-input" placeholder="Your full name" required>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Email Address</label>
+          <input type="email" name="Email" class="form-input" placeholder="your@email.com" required>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Desired Travel Dates</label>
+          <input type="text" name="Travel Dates" class="form-input" placeholder="e.g. December 2026, flexible">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Number of Guests</label>
+          <input type="text" name="Number of Guests" class="form-input" placeholder="Adults / children">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Accommodation Preference</label>
+          <select name="Accommodation Preference" class="form-input form-select">
+            <option value="" disabled selected>Select preference...</option>
+            <option value="No preference">No preference</option>
+            <option value="Private villa">Private villa</option>
+            <option value="Luxury hotel">Luxury hotel</option>
+            <option value="Glass igloo">Glass igloo</option>
+            <option value="Surprise me">Surprise me</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label">What Draws You To Lapland?</label>
+          <input type="text" name="What Draws Them To Lapland" class="form-input" placeholder="Northern lights, wilderness, family adventure...">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Anything Else Worth Mentioning?</label>
+          <input type="text" name="Additional Notes" class="form-input" placeholder="Special requests, celebrations, preferences...">
+        </div>
+        <button type="submit" class="form-submit">Send Inquiry</button>
+      </form>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <p>Thank you.<br><span>We will be in touch within 24 hours.</span></p>
+    </div>
+  </div>
+</div>
+
+<script src="journal.js"></script>
+</body>
+</html>
