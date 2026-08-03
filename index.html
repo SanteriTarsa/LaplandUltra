@@ -480,27 +480,9 @@ section.story {
   z-index:0;
 }
 
-/* Opening reveal, like an eye opening onto the video */
-#pageReveal {
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:#000;
-  z-index:600;
-  pointer-events:none;
-  clip-path:circle(0% at 50% 50%);
-  transition:clip-path 1.9s cubic-bezier(.65,0,.35,1);
-}
-
-#pageReveal.open { clip-path:circle(150% at 50% 50%); }
-
 </style>
 </head>
 <body>
-
-<noscript><style>#pageReveal{display:none !important;}</style></noscript>
-
-<div id="pageReveal"></div>
 
 <canvas id="snow"></canvas>
 
@@ -726,16 +708,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach(el => revealObserver.observe(el));
 
-// Opening reveal: dark screen opens like an eye onto the hero video
-(function() {
-  const reveal = document.getElementById("pageReveal");
-  if (!reveal) return;
-
-  requestAnimationFrame(() => {
-    setTimeout(() => reveal.classList.add("open"), 150);
-    setTimeout(() => { if (reveal.parentNode) reveal.remove(); }, 2100);
-  });
-})();
 </script>
 
 <div class="cursor" id="cursor"></div>
