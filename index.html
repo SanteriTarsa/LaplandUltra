@@ -480,13 +480,6 @@ section.story {
   z-index:0;
 }
 
-.logo {
-  opacity:0;
-  transition:opacity 1.6s ease;
-}
-
-.logo.show { opacity:1; }
-
 /* Opening reveal, like an eye opening onto the video */
 #pageReveal {
   position:fixed;
@@ -505,7 +498,7 @@ section.story {
 </head>
 <body>
 
-<noscript><style>.logo{opacity:1 !important;} #pageReveal{display:none !important;}</style></noscript>
+<noscript><style>#pageReveal{display:none !important;}</style></noscript>
 
 <div id="pageReveal"></div>
 
@@ -733,16 +726,14 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach(el => revealObserver.observe(el));
 
-// Opening reveal: dark screen opens like an eye onto the hero video, then the logo fades in
+// Opening reveal: dark screen opens like an eye onto the hero video
 (function() {
   const reveal = document.getElementById("pageReveal");
-  const logo = document.querySelector(".logo");
-  if (!reveal || !logo) return;
+  if (!reveal) return;
 
   requestAnimationFrame(() => {
     setTimeout(() => reveal.classList.add("open"), 150);
-    setTimeout(() => logo.classList.add("show"), 900);
-    setTimeout(() => { if (reveal.parentNode) reveal.remove(); }, 2200);
+    setTimeout(() => { if (reveal.parentNode) reveal.remove(); }, 2100);
   });
 })();
 </script>
