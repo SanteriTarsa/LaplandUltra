@@ -60,15 +60,21 @@ body {
 }
 
 .hero {
+  position:relative;
+  min-height:100vh;
+  background:#000;
+}
+
+.hero-frame {
+  position:absolute;
+  top:26%;
+  height:48%;
+  left:0;
+  width:100%;
+  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
-  min-height:100vh;
-  position:relative;
-  padding:60px 24px;
-  background-image:linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88) 60%, #000 100%), url('hero-bg.jpg');
-  background-size:cover;
-  background-position:center 30%;
 }
 
 canvas#snow {
@@ -87,7 +93,6 @@ canvas#snow {
   align-items:center;
   text-align:center;
   gap:10px;
-  margin-bottom:80px;
 }
 
 .logo {
@@ -476,7 +481,7 @@ section.story {
   position:absolute;
   top:0; left:0;
   width:100%; height:100%;
-  background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.78) 60%, #000 100%);
+  background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.65) 60%, rgba(0,0,0,0.9) 100%);
   z-index:0;
 }
 
@@ -487,16 +492,18 @@ section.story {
 <canvas id="snow"></canvas>
 
 <section class="hero">
-<video class="hero-video" src="intro.mp4" poster="hero-bg.jpg" autoplay muted loop playsinline preload="auto"></video>
-<div class="hero-overlay"></div>
-<div class="content">
-  <img class="logo" src="logo.svg" alt="Lapland Ultra">
-  <div class="divider">
-    <div class="divider-line"></div>
-    <div class="divider-diamond"></div>
-    <div class="divider-line"></div>
+<div class="hero-frame">
+  <video class="hero-video" src="intro.mp4" poster="hero-bg.jpg" autoplay muted loop playsinline preload="auto"></video>
+  <div class="hero-overlay"></div>
+  <div class="content">
+    <img class="logo" src="logo.svg" alt="Lapland Ultra">
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+    <a class="inquire-btn" onclick="openModal()">Begin Your Journey</a>
   </div>
-  <a class="inquire-btn" onclick="openModal()">Begin Your Journey</a>
 </div>
 <div class="scroll-cue"><div class="scroll-cue-line"></div></div>
 </section>
